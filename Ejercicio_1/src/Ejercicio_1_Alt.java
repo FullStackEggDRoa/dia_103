@@ -2,25 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicio_1;
-
-import Enumeradores.busquedasLibro;
-import Servicios.serviciosAutor;
-import Servicios.serviciosEditorial;
-import Servicios.serviciosLibro;
-import java.util.Scanner;
 
 /**
  *
  * @author droa
  */
-public class Ejercicio_1 {
+public class Ejercicio_1_Alt {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
        
         serviciosAutor sA = new serviciosAutor();
@@ -83,13 +77,10 @@ public class Ejercicio_1 {
                         e.printStackTrace();
                         System.out.println("Error del sistema por \n" + e.getMessage());
                     }
-                    break;
-                default:
-                    throw new AssertionError();
-//            }
+                    break;    
+            }
             
         } while (true);
-        
     }
     
 }
