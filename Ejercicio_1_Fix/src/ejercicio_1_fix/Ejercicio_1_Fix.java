@@ -33,9 +33,28 @@ public class Ejercicio_1_Fix {
             System.out.println("2. Ingresar Autor");
             System.out.println("3. Ingresar Editorial");
             System.out.println("4. Ingresar Libro");
+            System.out.println("5. Mostrar Autores");
+            System.out.println("6. Mostrar Editoriales");
             System.out.print("Elija una Opción: ");
             opcion=leer.nextInt();
             switch (opcion) {
+                
+                case 2:
+                    try{
+                        sA.crearAutor();
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Error del sistema por \n" + e.getMessage());
+                    }
+                    break;
+                case 3:
+                    try{
+                        sE.crearEditorial();
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Error del sistema por \n" + e.getMessage());
+                    }
+                    break;    
                 case 4:
                     try{
                         sL.crearLibro();
@@ -44,6 +63,39 @@ public class Ejercicio_1_Fix {
                         System.out.println("Error del sistema por \n" + e.getMessage());
                     }
                     break;
+                case 5:
+                    try{
+                        
+                        System.out.println("+------+-------------------------------+");
+                        System.out.println("|Codigo|       Nombre de Autor         |");
+                        System.out.println("+------+-------------------------------+");
+                        
+                        String Aux = sA.listarAutores().toString().replace(",", "+------+-------------------------------+\n");
+                        String Aux1 = Aux.replace("[", "|");
+                        System.out.println(Aux1.replace("\n]",""));
+                        System.out.println("+------+-------------------------------+");
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Error del sistema por \n" + e.getMessage());
+                    }
+                    break;
+                case 6:
+                    try{
+                        
+                        System.out.println("+------+-------------------------------+");
+                        System.out.println("|Codigo|      Nombre de Editorial      |");
+                        System.out.println("+------+-------------------------------+");
+                        
+                        String Aux = sE.listarEditoriales().toString().replace(",", "+------+-------------------------------+\n");
+                        String Aux1 = Aux.replace("[", "|");
+                        System.out.println(Aux1.replace("\n]",""));
+                        System.out.println("+------+-------------------------------+");
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Error del sistema por \n" + e.getMessage());
+                    }
+                    break;    
+                    
                 default:
                     throw new AssertionError();
             }
