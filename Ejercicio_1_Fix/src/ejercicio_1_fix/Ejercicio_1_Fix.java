@@ -35,6 +35,7 @@ public class Ejercicio_1_Fix {
             System.out.println("4. Ingresar Libro");
             System.out.println("5. Mostrar Autores");
             System.out.println("6. Mostrar Editoriales");
+            System.out.println("7. Mostrar Libros");
             System.out.print("Elija una Opción: ");
             opcion=leer.nextInt();
             switch (opcion) {
@@ -95,7 +96,22 @@ public class Ejercicio_1_Fix {
                         System.out.println("Error del sistema por \n" + e.getMessage());
                     }
                     break;    
-                    
+                case 7:
+                    try{
+                        
+                        System.out.println("+------+-------------------------------+---------------------+-------------------------------+-------------------------------+-----+");
+                        System.out.println("|Codigo|        Titulo del Libro       |    ISBN del Libro   |             Autor             |            Editorial          | Año |");
+                        System.out.println("+------+-------------------------------+---------------------+-------------------------------+-------------------------------+-----+");
+                        
+                        String Aux = sL.listarLibros().toString().replace(",", "+------+-------------------------------+---------------------+-------------------------------+-------------------------------+-----+\n");
+                        String Aux1 = Aux.replace("[", "|");
+                        System.out.println(Aux1.replace("\n]",""));
+                        System.out.println("+------+-------------------------------+---------------------+-------------------------------+-------------------------------+-----+");
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("Error del sistema por \n" + e.getMessage());
+                    }
+                    break;      
                 default:
                     throw new AssertionError();
             }
