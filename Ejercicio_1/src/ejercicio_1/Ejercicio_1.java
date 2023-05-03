@@ -22,7 +22,7 @@ public class Ejercicio_1 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-       
+        
         serviciosAutor sA = new serviciosAutor();
         serviciosEditorial sE = new serviciosEditorial();
         serviciosLibro sL = new serviciosLibro();
