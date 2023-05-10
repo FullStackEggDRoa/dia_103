@@ -93,16 +93,16 @@ public class Ejercicio_1 {
                     try{
                         sA.crearAutor();
                     }catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("Error del sistema por \n" + e.getMessage());
+                        //e.printStackTrace();
+                        //System.out.println("Error del sistema por \n" + e.getMessage());
                     }
                     break;
                 case 3:
                     try{
                         sE.crearEditorial();
                     }catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("Error del sistema por \n" + e.getMessage());
+                        //e.printStackTrace();
+                        //System.out.println("Error del sistema por \n" + e.getMessage());
                     }
                     break;    
                 case 4:
@@ -177,7 +177,13 @@ public class Ejercicio_1 {
                         String Aux1 = Aux.replace("[", "|");
                         System.out.println(Aux1.replace("\n]",""));
                         System.out.println("+------+-------------------------------+---------------------+------------+------------------------+----------------------+");
-                    }catch (Exception e) {
+                        sL.editarInventarioLibro(codigoLibro);
+                    }catch(IndexOutOfBoundsException o){
+                        String Aux1 = "| NOTA: No se encontraron libros con esa ID.";
+                        System.out.println(Aux1.replace("\n]",""));
+                        System.out.println("+-------------------------------------------------------------------------------------------------------------------------+");
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                         System.out.println("Error del sistema por \n" + e.getMessage());
                     }
